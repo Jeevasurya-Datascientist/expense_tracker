@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #f0fff4;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in;
+}
+
+h1 {
+    color: #2f855a;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.input-group {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+input {
+    flex: 1;
+    padding: 0.8rem;
+    border: 2px solid #9ae6b4;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #48bb78;
+    box-shadow: 0 0 0 3px rgba(72, 187, 120, 0.2);
+}
+
+button {
+    background-color: #48bb78;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #38a169;
+    transform: translateY(-2px);
+}
+
+.history {
+    margin-top: 2rem;
+    margin-bottom: 80px;
+}
+
+.expense-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f0fff4;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    animation: slideIn 0.3s ease-out;
+    user-select: none;
+    transition: all 0.3s ease;
+}
+
+.expense-item.selected {
+    background-color: #c6f6d5;
+    border: 2px solid #48bb78;
+}
+
+.expense-details {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.expense-name {
+    font-weight: bold;
+    color: #2f855a;
+}
+
+.expense-date {
+    font-size: 0.8rem;
+    color: #68d391;
+}
+
+.expense-amount {
+    font-weight: bold;
+    color: #38a169;
+    margin-left: 1rem;
+}
+
+.chart-container {
+    margin-top: 2rem;
+    height: 300px;
+}
+
+.daily-total {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #2f855a;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.selection-mode {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #2f855a;
+    color: white;
+    padding: 1rem;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    animation: slideUp 0.3s ease-out;
+    z-index: 1000;
+}
+
+.selection-mode.active {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
